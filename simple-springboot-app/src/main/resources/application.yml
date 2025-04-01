@@ -9,4 +9,4 @@ spring:
 
 configuration:
   property:
-    value: Hello from Property file
+    value: Hello from file
