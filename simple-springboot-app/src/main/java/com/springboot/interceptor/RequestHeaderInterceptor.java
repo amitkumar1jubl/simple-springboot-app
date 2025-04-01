@@ -12,12 +12,7 @@ public class RequestHeaderInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		// TODO Auto-generated method stub
-
-		/* un-comment to use the interceptor with a requestHeader
-		 * if (StringUtils.isBlank(request.getHeader("student-auth-key"))) {
-			throw new InvalidHeaderFieldException("Invalid request");
-		}*/
+		
 
 		return super.preHandle(request, response, handler);
 	}
