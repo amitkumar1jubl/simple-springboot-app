@@ -11,14 +11,17 @@ import com.springboot.exception.InvalidFieldException;
 import com.springboot.model.Student;
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/student1")
 public class StudentController {
 
 	@PostMapping
-	public String saveStudentInformation(@RequestHeader("student-auth-key") String authorization,
+	public String saveStudentInformation(@RequestHeader("auth-key") String authorization,
 			@RequestBody Student student) {
 		if (StringUtils.isBlank(student.getLastName())) {
 			throw new InvalidFieldException("Last Name is a required field");
+		}
+		if (StringUtils.isBlank(student.getFirstName())) {
+			throw new InvalidFieldException("First Name is a required field");
 		}
 		return String.format("Authorization %s is valid, and Data is saved", authorization);
 	}
